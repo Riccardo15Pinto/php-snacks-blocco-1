@@ -3,20 +3,9 @@
 $name = $_GET['name'];
 $email = $_GET['email'];
 $age = $_GET['age'];
+$at = '@';
+$punto = '.';
 
-// if (strlen($name) >= 3) {
-
-//     echo $name;
-// }
-
-// if (preg_match('/(@?| .?)/', $email)) {
-//     echo 'dajeee';
-// }
-
-
-
-echo $email;
-echo $age;
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +18,11 @@ echo $age;
 </head>
 
 <body>
-    <!-- <?php if (strlen($name) >= 3) : ?>
-        <h1><?= $name ?></h1>
-    <?php endif ?> -->
+    <?php if (strpos($email, $at) && strpos($email, $punto) && strlen($name) >= 3 && is_numeric($age)) : ?>
+        <h1>Accesso Consentito</h1>
+    <?php else : ?>
+        <h1>Accesso Negato</h1>
+    <?php endif ?>
 </body>
 
 </html>
